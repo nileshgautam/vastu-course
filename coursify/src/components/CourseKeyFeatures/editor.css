@@ -1,0 +1,18 @@
+.error {
+  color: red;
+}
+
+.ql-editor {
+  min-height: 200px !important;
+}
+
+.add-btn-key {
+    background: aqua;
+    width: 6rem;
+    color: #ffff;
+    float: right !important;
+}
+.add-btn-key:hover{
+  color: #000;
+}
+

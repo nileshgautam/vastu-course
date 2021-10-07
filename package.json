@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix coursify-ui && npm run build --prefix coursify-ui"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
