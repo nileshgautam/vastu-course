@@ -25,12 +25,8 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 
-app.use("/courses", coursesRouter);
-app.use("/admin", adminRouter);
-app.use("/modules", modulesRouter);
-app.use("/lectures", lecturesRouter);
 
-if ( process.env.NODE_ENV == "production"){
+if (process.env.NODE_ENV == "production") {
 
   app.use(express.static("coursify/build"));
 
@@ -38,10 +34,14 @@ if ( process.env.NODE_ENV == "production"){
 
   app.get("*", (req, res) => {
 
-      res.sendFile(path.resolve(__dirname, 'coursify', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'coursify', 'build', 'index.html'));
 
   })
 
+  app.use("/courses", coursesRouter);
+  app.use("/admin", adminRouter);
+  app.use("/modules", modulesRouter);
+  app.use("/lectures", lecturesRouter);
 
 }
 
