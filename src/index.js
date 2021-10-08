@@ -32,12 +32,12 @@ app.use("/lectures", lecturesRouter);
 
 
 app.use(express.static(__dirname+ '/build'));
-console.log(__dirname);
+// console.log(__dirname);
 
 if ( process.env.NODE_ENV == "production"){
 
   // app.use(express.static("coursify/build"));
-  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.static(__dirname+ '/build'));
   // app.get(()=>res, coursesRouter);
   // app.get('/', function(req, res) {
   //   res.sendfile('index.html');
