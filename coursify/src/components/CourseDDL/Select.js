@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { useFormikContext } from "formik";
 import { CoursifyContext } from "../../context/CoursifyContext";
 
-
 // import Select from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./editor.css";

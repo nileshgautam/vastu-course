@@ -9,7 +9,7 @@ const lecturesRouter = require("./routes/lecture");
 const app = express();
 connectDB();
 // const port = process.env.PORT;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,17 +23,26 @@ app.use((req, res, next) => {
   );
   next();
 });
+
 app.use(express.json());
 app.use("/courses", coursesRouter);
 app.use("/admin", adminRouter);
 app.use("/modules", modulesRouter);
 app.use("/lectures", lecturesRouter);
 
+
+app.use(express.static(__dirname+ '/build'));
+console.log(__dirname);
+
 if ( process.env.NODE_ENV == "production"){
 
-  app.use(express.static("coursify/build"));
-
-  const path = require("path");
+  // app.use(express.static("coursify/build"));
+  app.use(express.static(path.join(__dirname, 'build')));
+  // app.get(()=>res, coursesRouter);
+  // app.get('/', function(req, res) {
+  //   res.sendfile('index.html');
+  // });
+  // const path = require("path");
 
   // app.get("*", (req, res) => {
 
